@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#toast-container > div {
+  background-color: rgb(49, 49, 49);
+}
+
+.toast-message {
+  text-align: right;
+  font-size: 1vw;
+}
+
+@media (max-width: 767px) {
+  .toast-message {
+   font-size: 3vw;
+  }
+}
+

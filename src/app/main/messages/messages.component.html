@@ -1,0 +1,53 @@
+<div class="container-fluid-sm">
+  <div class="container-sm">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-center mt-2">
+        <button (click)="stopGenerateData()" *ngIf="start" class="btn mx-1 btn-style">توقف</button>
+        <button (click)="generateData()" *ngIf="!start" class="btn mx-1 btn-style">شروع</button>
+        <button (click)="removeMessages()" class="btn btn-style">پاک کردن</button>
+      </div>
+    </div>
+    <div class="row mx-4 mt-4">
+      <div class="col-4 title">
+        <h1>درست نیست</h1>
+      </div>
+      <div class="col-4 title">
+        <h1>میتواند درست باشد</h1>
+      </div>
+      <div class="col-4 title">
+        <h1>درست است</h1>
+      </div>
+    </div>
+    <div class="row mx-4 ">
+      <div class="col-4">
+        <span><span class="mx-1">تعداد</span><span>{{falseMessages.length}}</span></span>
+      </div>
+      <div class="col-4">
+        <span><span class="mx-1">تعداد</span><span>{{maybeTrueMessages.length}}</span></span>
+      </div>
+      <div class="col-4">
+        <span><span class="mx-1">تعداد</span><span>{{trueMessages.length}}</span></span>
+      </div>
+    </div>
+    <div class="row mx-4 d-flex">
+      <div class="col-4 d-flex flex-column align-items-end">
+        <div class="not-correct box" *ngFor="let msg of falseMessages">{{msg.message}}
+          <div class="delete" (click)="deleteMessage(msg.ID)"><span class="mx-1">پاک کردن</span><i
+            class="fas fa-times"></i></div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column align-items-end">
+        <div class="maybe-correct box" *ngFor="let msg of maybeTrueMessages">{{msg.message}}
+          <div class="delete" (click)="deleteMessage(msg.ID)"><span class="mx-1">پاک کردن</span><i
+            class="fas fa-times"></i></div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column align-items-end">
+        <div class="correct box" *ngFor="let msg of trueMessages">{{msg.message}}
+          <div class="delete" (click)="deleteMessage(msg.ID)"><span class="mx-1">پاک کردن</span><i
+            class="fas fa-times"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
